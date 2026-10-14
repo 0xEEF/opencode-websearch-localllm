@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "opencode-websearch",
+  "version": "0.1.0",
+  "description": "Self-contained web search + page-simplification provider for OpenCode's built-in websearch tool. Works with any model, including local ones.",
+  "type": "module",
+  "license": "MIT",
+  "author": "xeaf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "websearch",
+    "search",
+    "duckduckgo",
+    "markdown"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test",
+    "prepare": "node -e \"const fs=require('node:fs');if(fs.existsSync('dist/index.js'))process.exit(0);try{require.resolve('typescript')}catch{process.exit(0)};require('node:child_process').execSync('npm run build',{stdio:'inherit'})\"",
+    "prepack": "npm run build",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.18.0",
+    "cheerio": "^1.0.0",
+    "turndown": "^7.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@types/node": "^24.0.0",
+    "@types/turndown": "^5.0.5",
+    "semantic-release": "^25.0.9",
+    "typescript": "^5.8.2"
+  }
+}
