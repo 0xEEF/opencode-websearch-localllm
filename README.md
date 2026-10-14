@@ -44,7 +44,24 @@ nav, forms, images) stripped.
 - **OpenCode 1.x** with the v1 plugin API (`@opencode-ai/plugin`).
 - Node.js 22.14+ (OpenCode's runtime already provides `fetch`).
 
-## Install from source (no npm)
+## Install from npm
+
+Add the published package to the `plugin` array in your OpenCode config —
+opencode installs it from the npm registry automatically (its dependencies,
+`cheerio` and `turndown`, are pulled in with it):
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    ["opencode-websearch-localllm", { "maxResults": 5, "maxContent": 8000 }]
+  ]
+}
+```
+
+Start a fresh OpenCode session so it installs the package and loads the plugin.
+
+## Install from source
 
 Build the plugin, then drop the single compiled file into the **global plugin
 directory** so it loads across all your projects.
