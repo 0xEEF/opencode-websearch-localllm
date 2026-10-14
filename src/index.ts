@@ -1,5 +1,5 @@
 /**
- * opencode-websearch
+ * opencode-websearch-localllm
  *
  * A self-contained web search plugin for OpenCode (v1 plugin API). It searches
  * DuckDuckGo itself, fetches the result pages, and hands back a SIMPLIFIED
@@ -74,7 +74,7 @@ export interface WebsearchOptions {
   fetchPages?: boolean
 }
 
-/** Plugin options accepted from the config array form: `["opencode-websearch", opts]`. */
+/** Plugin options accepted from the config array form: `["opencode-websearch-localllm", opts]`. */
 export type WebsearchOptionsRecord = Record<string, unknown>
 
 /* ------------------------------------------------------------------ *

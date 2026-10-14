@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "opencode-websearch",
+  "name": "opencode-websearch-localllm",
   "version": "0.1.0",
   "description": "Self-contained web search + page-simplification provider for OpenCode's built-in websearch tool. Works with any model, including local ones.",
   "type": "module",

@@ -1,4 +1,4 @@
-# opencode-websearch
+# opencode-websearch-localllm
 
 A **self-contained** web search plugin for OpenCode. It searches
 [DuckDuckGo](https://duckduckgo.com) itself, fetches the result pages, and
@@ -88,13 +88,13 @@ picks up the new plugin file.
 ## Configure
 
 Options are passed via the plugin entry in the `plugin` array
-(`["opencode-websearch", { ... }]`):
+(`["opencode-websearch-localllm", { ... }]`):
 
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    ["opencode-websearch", { "maxResults": 5, "maxContent": 8000 }]
+    ["opencode-websearch-localllm", { "maxResults": 5, "maxContent": 8000 }]
   ]
 }
 ```
